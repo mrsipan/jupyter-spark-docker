@@ -1,6 +1,7 @@
 FROM mrsipan/py-spark
 
 ENV PATH="/usr/pgsql-13/bin:/opt/clean_python/3.7.9/bin:${PATH}"
+ENV PYSPARK_PYTHON=/opt/clean_python/3.7.9/bin/python3.7 
 
 WORKDIR /build
 
@@ -46,6 +47,4 @@ RUN jupyter labextension install @axlair/jupyterlab_vim
 
 EXPOSE 8888
 
-ENTRYPOINT ["jupyter", "lab", "--allow-root", "--ip=0.0.0.0"]
-
-CMD ["/usr/bin/bash"]
+CMD ["jupyter", "lab", "--allow-root", "--ip=0.0.0.0"]
