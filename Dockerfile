@@ -11,7 +11,6 @@ RUN yum -y install rh-nodejs12
 RUN yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 RUN yum install -y postgresql13-server
 
-
 RUN alternatives --install \
       /usr/bin/node node /opt/rh/rh-nodejs12/root/usr/bin/node 1 \
       --slave /usr/bin/npm npm /opt/rh/rh-nodejs12/root/usr/bin/npm
