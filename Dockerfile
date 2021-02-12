@@ -1,7 +1,6 @@
 FROM mrsipan/py-spark
 
 ENV PATH="/usr/pgsql-13/bin:/opt/clean_python/3.7.9/bin:${PATH}"
-ENV PYSPARK_PYTHON=/opt/clean_python/3.7.9/bin/python3.7 
 
 WORKDIR /build
 
@@ -23,7 +22,8 @@ RUN pip3 install --upgrade pip && \
                  bobo \
                  cffi \
                  httpie \
-                 jupyterlab \
+                 jupyterlab>=3.0.0 \
+                 jupyterlab_vim \
                  keras \
                  matplotlib \
                  newt.db \
@@ -43,8 +43,8 @@ RUN pip3 install torch==1.7.0+cpu \
                  torchaudio==0.7.0 \
                  -f https://download.pytorch.org/whl/torch_stable.html
 
-RUN jupyter labextension install @axlair/jupyterlab_vim
-
 EXPOSE 8888
 
-CMD ["jupyter", "lab", "--allow-root", "--ip=0.0.0.0"]
+ENTRYPOINT ["jupyter", "lab", "--allow-root", "--ip=0.0.0.0"]
+
+CMD ["/usr/bin/bash"]
