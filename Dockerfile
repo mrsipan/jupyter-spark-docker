@@ -44,6 +44,6 @@ RUN pip3 install torch==1.7.0+cpu \
 
 EXPOSE 8888
 
-ENTRYPOINT ["jupyter", "lab", "--allow-root", "--ip=0.0.0.0"]
+ENTRYPOINT ["jupyter", "lab", "--no-browser", "--allow-root", "--ip='*'", "--NotebookApp.token=''", "--NotebookApp.password=''", "--NotebookApp.notebook_dir=/build", "--NotebookApp.file_to_run=/build"]
 
 CMD ["/usr/bin/bash"]
