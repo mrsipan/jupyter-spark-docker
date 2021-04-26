@@ -1,6 +1,8 @@
 FROM mrsipan/py-spark
 
 ENV PATH="/usr/pgsql-13/bin:/opt/clean_python/3.7.9/bin:${PATH}"
+ENV PYSPARK_PYTHON="/opt/clean_python/3.7.9/bin/python3.7"
+ENV PYSPARK_DRIVER_PYTHON="/opt/clean_python/3.7.9/bin/python3.7"
 
 WORKDIR /build
 
@@ -21,15 +23,16 @@ RUN pip3 install --upgrade pip && \
                  bobo \
                  cffi \
                  httpie \
-                 jupyterlab>=3.0.0 \
+                 jupyterlab>=3.0.14 \
                  jupyterlab_vim \
                  keras \
+                 koalas \
                  matplotlib \
                  newt.db \
                  ninja \
                  pandas \
                  pgcli \
-                 pyspark \
+                 pyspark[sql]==2.4.7 \
                  pyvim \
                  requests \
                  scikit-learn \
