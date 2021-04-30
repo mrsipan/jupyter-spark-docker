@@ -23,6 +23,7 @@ RUN pip3 install --upgrade pip && \
                  bobo \
                  cffi \
                  httpie \
+                 jupyterlab-drawio \
                  jupyterlab>=3.0.14 \
                  jupyterlab_vim \
                  keras \
