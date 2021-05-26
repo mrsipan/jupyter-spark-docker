@@ -38,6 +38,7 @@ RUN pip3 install --upgrade pip && \
                  requests \
                  scikit-learn \
                  seaborn \
+                 spacy \
                  tensorflow \
                  xonsh
 
