@@ -47,8 +47,14 @@ RUN pip3 install torch==1.7.0+cpu \
                  torchaudio==0.7.0 \
                  -f https://download.pytorch.org/whl/torch_stable.html
 
+RUN mkdir -p /root/.jupyter/lab/user-settings/
+COPY @jupyterlab /root/.jupyter/lab/user-settings/@jupyterlab/
+
+RUN mkdir -p /root/.local/share/
+COPY fonts /root/.local/share/fonts/
+
 EXPOSE 8888
 
-ENTRYPOINT ["jupyter", "lab", "--no-browser", "--allow-root", "--ip='*'", "--NotebookApp.token=''", "--NotebookApp.password=''", "--NotebookApp.notebook_dir=/build", "--NotebookApp.file_to_run=/build"]
+ENTRYPOINT ["jupyter", "lab", "--no-browser", "--allow-root", "--ip='*'", "--NotebookApp.token=''", "--NotebookApp.password=''", "--NotebookApp.root_dir=/build", "--NotebookApp.file_to_run=/build"]
 
 CMD ["/usr/bin/bash"]
