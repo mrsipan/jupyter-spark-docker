@@ -1,0 +1,18 @@
+{
+    "editorConfig": {
+        "autoClosingBrackets": true,
+        "codeFolding": false,
+        "cursorBlinkRate": 530,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 14,
+        "insertSpaces": true,
+        "lineHeight": 1.2,
+        "lineNumbers": true,
+        "lineWrap": "off",
+        "matchBrackets": true,
+        "readOnly": false,
+        "rulers": [],
+        "tabSize": 4,
+        "wordWrapColumn": 80
+    }
+}

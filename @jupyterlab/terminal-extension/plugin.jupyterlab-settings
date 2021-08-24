@@ -30,7 +30,7 @@
 
     // Scrollback Buffer
     // The amount of scrollback beyond initial viewport
-    "scrollback": 1000,
+    "scrollback": 10000,
 
     // Shut down on close
     // Shut down the session when closing the terminal.
